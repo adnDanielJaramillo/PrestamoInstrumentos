@@ -38,8 +38,11 @@ pipeline {
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>Compile & Unit Tests<------------"
+		withSonarQubeEnv('Sonar') {
+		sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
+        }
 		sh 'chmod +x gradlew'
-		sh './microservicio/gradlew --b ./microservicio/build.gradle test'
+		sh '../gradlew --b ../build.gradle test'
 
       }
     }
@@ -62,7 +65,7 @@ pipeline {
       steps {
         echo "------------>Build<------------"
         //Construir sin tarea test que se ejecutó previamente
-        sh './microservicio/gradlew --b ./microservicio/build.gradle build -x test'
+        sh '../gradlew --b ../build.gradle build -x test'
       }
     }
   }
