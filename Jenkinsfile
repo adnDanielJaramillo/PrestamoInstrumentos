@@ -39,7 +39,7 @@ pipeline {
       steps{
         echo "------------>Compile & Unit Tests<------------"
 		sh 'chmod +x gradlew'
-		sh './gradlew --b ./build.gradle test'
+		sh '../gradlew --b ./build.gradle test'
 
       }
     }
@@ -62,7 +62,7 @@ pipeline {
       steps {
         echo "------------>Build<------------"
         //Construir sin tarea test que se ejecutó previamente
-        sh './gradlew --b ./build.gradle build -x test'
+        sh '../gradlew --b ./build.gradle build -x test'
       }
     }
   }
