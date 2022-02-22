@@ -50,7 +50,7 @@ pipeline {
         withSonarQubeEnv('Sonar') {
 		sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
         
-        sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:[prestamoinstrumentos.daniel.jaramillo]',
+        sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.daniel.prestamoinstrumentos.daniel.jaramillo',
                 sonarName:'CeibaADN-PrestamoInstrumentos(daniel.jaramillo)',
                 sonarPathProperties:'./sonar-project.properties')
             }
