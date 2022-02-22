@@ -70,7 +70,7 @@ pipeline {
     }
     success {
       echo 'This will run only if successful'
-      junit 'microservicio/build/test-results/test/*.xml' //RUTA RELATIVA DE LOS ARCHIVOS .XML
+      
     }
     failure {
       mail (to: 'daniel.jaramillo@ceiba.com.co',subject: "Failed Pipeline:${currentBuild.fullDisplayName}",body: "Something is wrong with ${env.BUILD_URL}")
