@@ -18,12 +18,14 @@ public class Prestamo {
     private String nombre;
     private Double valorPrestamo;
     private LocalDateTime fechaPrestamo;
+    private String usuario;
 
-    public Prestamo(Long id, String tipo, String nombre, Double valorPrestamo, LocalDateTime fechaPrestamo) {
+    public Prestamo(Long id, String tipo, String nombre, Double valorPrestamo, LocalDateTime fechaPrestamo, String usuario) {
 
         validarObligatorio(tipo, SE_DEBE_INGRESAR_EL_TIPO_DE_INSTRUMENTO);
         validarObligatorio(nombre, SE_DEBE_INGRESAR_EL_TIPO_DE_INSTRUMENTO);
         validarObligatorio(fechaPrestamo, SE_DEBE_INGRESAR_EL_TIPO_DE_INSTRUMENTO);
+        validarObligatorio(usuario, SE_DEBE_INGRESAR_EL_TIPO_DE_INSTRUMENTO);
 
 
         this.id = id;
@@ -31,5 +33,6 @@ public class Prestamo {
         this.nombre = nombre;
         this.valorPrestamo = valorPrestamo;
         this.fechaPrestamo = fechaPrestamo;
+        this.usuario = usuario;
     }
 }
