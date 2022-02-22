@@ -17,5 +17,10 @@ public interface RepositorioPrestamo {
      */
     void actualizar(Prestamo prestamo);
 
+    /**
+     * Permite buscar un prestamos por el usuario
+     * @param usuario
+     * @return si existe o no
+     */
     boolean buscarPorUsuario(String usuario);
 }

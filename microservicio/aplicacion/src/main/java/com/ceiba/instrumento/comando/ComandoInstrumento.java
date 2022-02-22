@@ -17,6 +17,7 @@ public class ComandoInstrumento {
     private Long id;
     private String tipo;
     private String nombre;
-    private String valorPrestamo;
+    private Double valorPrestamo;
     private LocalDateTime fechaPrestamo;
+    private String usuario;
 }
