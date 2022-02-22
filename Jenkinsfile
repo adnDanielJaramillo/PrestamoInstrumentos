@@ -38,9 +38,6 @@ pipeline {
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>Compile & Unit Tests<------------"
-		withSonarQubeEnv('Sonar') {
-		sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
-        }
 		sh 'chmod +x gradlew'
 		sh './gradlew --b ./build.gradle test'
 
