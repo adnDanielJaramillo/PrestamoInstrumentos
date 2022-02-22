@@ -13,4 +13,5 @@ public class DtoPrestamo {
     private String nombre;
     private Double valorPrestamo;
     private LocalDateTime fechaPrestamo;
+    private String usuario;
 }

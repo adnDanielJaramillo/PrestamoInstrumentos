@@ -16,4 +16,6 @@ public interface RepositorioPrestamo {
      * @param prestamo
      */
     void actualizar(Prestamo prestamo);
+
+    boolean buscarPorUsuario(String usuario);
 }
