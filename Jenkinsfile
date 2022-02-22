@@ -50,7 +50,7 @@ pipeline {
         echo '------------>Análisis de código estático<------------'
 		
         sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:prestamo.instrumentos-daniel.jaramillo',                
-				sonarName:''"CeibaADN-PrestamoInstrumentos(daniel.jaramillo)"''
+				sonarName:'''"CeibaADN-PrestamoInstrumentos(daniel.jaramillo)"''',
                 sonarPathProperties:'sonar-project.properties')
       }
     }
