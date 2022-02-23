@@ -15,7 +15,7 @@ public class Prestamo {
     private static final String SE_DEBE_INGRESAR_EL_NOMBRE_DE_INSTRUMENTO = "Se debe ingresar el nombre del instrumento";
     private static final String SE_DEBE_INGRESAR_EL_ID_USUARIO = "Se debe ingresar el id del usuario";
 
-    private Long id;
+    private final Long id;
     private String tipo;
     private String nombre;
     private Double valorPrestamo;

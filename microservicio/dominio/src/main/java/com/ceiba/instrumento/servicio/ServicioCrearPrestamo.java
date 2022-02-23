@@ -37,23 +37,18 @@ public class ServicioCrearPrestamo {
 
     private void validarPagoPortipoInstrumento(Prestamo prestamo){
 
-        if(prestamo.getTipo().equalsIgnoreCase(Tipos.VIENTO.toString())){
-            if(!prestamo.getValorPrestamo().equals(1000.0)){
-                throw new ExcepcionValorInvalido(DEBE_INGRESAR_EL_VALOR_CORRECTO);
-            }
-        }
-        if(prestamo.getTipo().equalsIgnoreCase(Tipos.CUERDA.toString())){
-            if(!prestamo.getValorPrestamo().equals(3000.0)){
-                throw new ExcepcionValorInvalido(DEBE_INGRESAR_EL_VALOR_CORRECTO);
-            }
-        }
-        if(prestamo.getTipo().equalsIgnoreCase(Tipos.PERCUSION.toString())){
-            if(!prestamo.getValorPrestamo().equals(5000.0)){
-                throw new ExcepcionValorInvalido(DEBE_INGRESAR_EL_VALOR_CORRECTO);
-            }
+
+        if(prestamo.getTipo().equalsIgnoreCase(Tipos.VIENTO.toString()) && !prestamo.getValorPrestamo().equals(1000.0)){
+            throw new ExcepcionValorInvalido(DEBE_INGRESAR_EL_VALOR_CORRECTO);
         }
 
 
+        if(prestamo.getTipo().equalsIgnoreCase(Tipos.CUERDA.toString()) && !prestamo.getValorPrestamo().equals(3000.0)){
+            throw new ExcepcionValorInvalido(DEBE_INGRESAR_EL_VALOR_CORRECTO);
+        }
 
+        if(prestamo.getTipo().equalsIgnoreCase(Tipos.PERCUSION.toString()) && !prestamo.getValorPrestamo().equals(5000.0)){
+            throw new ExcepcionValorInvalido(DEBE_INGRESAR_EL_VALOR_CORRECTO);
+        }
     }
 }
