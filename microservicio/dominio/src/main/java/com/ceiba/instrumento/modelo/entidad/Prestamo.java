@@ -10,7 +10,7 @@ import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
 @Getter
 public class Prestamo implements Serializable {
 
-    private static final long serialVersionUID = 1;
+    private static final long serialVersionUID = 231L;
     private static final String SE_DEBE_INGRESAR_EL_TIPO_DE_INSTRUMENTO = "Se debe ingresar el tipo de instrumento";
     private static final String SE_DEBE_INGRESAR_LA_FECHA_PRESTAMO = "Se debe ingresar la fecha de prestamo";
     private static final String SE_DEBE_INGRESAR_EL_VALOR_PRESTAMO = "Se debe ingresar el valor del prestamo";
