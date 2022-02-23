@@ -2,6 +2,7 @@ package com.ceiba.prestamo.controlador;
 
 import com.ceiba.ApplicationMock;
 import io.swagger.annotations.ApiOperation;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ public class ConsultaControladorPrestamoTest {
     private MockMvc mocMvc;
 
     @Test
-    @ApiOperation("Deberia listar prestamos")
+    @DisplayName("Deberia listar prestamos")
     void deberiaListarPrestamos()throws Exception{
     //arrange
     // act - assert
