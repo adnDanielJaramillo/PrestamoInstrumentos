@@ -13,7 +13,7 @@ public class DaoPrestamoSql implements DaoPrestamo {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
-    @SqlStatement(namespace = "prestamo", value = "listar")
+    @SqlStatement(namespace="prestamo", value="listar")
     private static String sqlListar;
 
     public DaoPrestamoSql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
