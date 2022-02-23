@@ -28,14 +28,6 @@ public class BeanServicio {
         return new ServicioActualizarUsuario(repositorioUsuario);
     }
 
-    @Bean
-    public ServicioCrearPrestamo servicioCrearPrestamo(RepositorioPrestamo repositorioPrestamo){
-        return new ServicioCrearPrestamo(repositorioPrestamo);
-    }
 
-    @Bean
-    public ServicioActualizarPrestamo servicioActualizarPrestamo(RepositorioPrestamo repositorioPrestamo){
-        return new ServicioActualizarPrestamo(repositorioPrestamo);
-    }
 
 }

@@ -42,7 +42,7 @@ public class RepositorioPrestamoSql implements RepositorioPrestamo {
     @Override
     public boolean buscarPorUsuario(String usuario) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("usuario", usuario);
+        paramSource.addValue("idUsuario", usuario);
 
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlBuscarPorUsuario,paramSource, Boolean.class);
     }

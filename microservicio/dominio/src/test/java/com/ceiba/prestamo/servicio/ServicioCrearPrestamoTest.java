@@ -3,7 +3,6 @@ package com.ceiba.prestamo.servicio;
 import com.ceiba.BasePrueba;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
-import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.instrumento.modelo.entidad.Prestamo;
 import com.ceiba.instrumento.puerto.repositorio.RepositorioPrestamo;
 import com.ceiba.instrumento.servicio.ServicioCrearPrestamo;

@@ -1,7 +1,7 @@
 package com.ceiba.prestamo.controlador;
 
 import com.ceiba.ComandoRespuesta;
-import com.ceiba.instrumento.comando.ComandoInstrumento;
+import com.ceiba.instrumento.comando.ComandoPrestamo;
 import com.ceiba.instrumento.comando.manejador.ManejadorActualizarPrestamo;
 import com.ceiba.instrumento.comando.manejador.ManejadorCrearPrestamo;
 import io.swagger.annotations.Api;
@@ -25,13 +25,13 @@ public class ComandoControladorPrestamo {
 
     @PostMapping
     @ApiOperation("Crear Prestamo")
-    public ComandoRespuesta<Long> crear(@RequestBody ComandoInstrumento comandoInstrumento){
+    public ComandoRespuesta<Long> crear(@RequestBody ComandoPrestamo comandoInstrumento){
         return manejadorCrearPrestamo.ejecutar(comandoInstrumento);
     }
 
     @PutMapping(value = "/{id}")
     @ApiOperation("Actualizar Prestamo")
-    public void actualizar(@RequestBody ComandoInstrumento comandoInstrumento, @PathVariable Long id){
+    public void actualizar(@RequestBody ComandoPrestamo comandoInstrumento, @PathVariable Long id){
         comandoInstrumento.setId(id);
         manejadorActualizarPrestamo.ejecutar(comandoInstrumento);
     }

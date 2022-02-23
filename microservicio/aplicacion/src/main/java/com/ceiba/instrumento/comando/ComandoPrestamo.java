@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ComandoInstrumento {
+public class ComandoPrestamo {
 
     private Long id;
     private String tipo;

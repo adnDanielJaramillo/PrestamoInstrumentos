@@ -4,7 +4,6 @@ import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.instrumento.modelo.entidad.Prestamo;
 import com.ceiba.instrumento.puerto.repositorio.RepositorioPrestamo;
-import com.sun.org.apache.bcel.internal.generic.SWITCH;
 
 public class ServicioCrearPrestamo {
 

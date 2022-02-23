@@ -1,1 +1,1 @@
-select count(1) from prestamo where usuario = :usuario
+select count(1) from prestamo where idUsuario = :idUsuario

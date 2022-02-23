@@ -1,1 +1,2 @@
-insert into usuario(id, nombre,clave,fecha_creacion) values(1,'test','1234',now())
+insert into usuario(id, nombre,clave,fecha_creacion) values(1,'test','1234',now());
+insert into prestamo(id, tipo, nombre, valor_prestamo, fecha_prestamo, idUsuario) values(1, 'viento', 'flauta', 3000.0, now(), '1');
