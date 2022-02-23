@@ -23,4 +23,10 @@ public interface RepositorioPrestamo {
      * @return si existe o no
      */
     boolean buscarPorUsuario(String usuario);
+
+    /**
+     * Permite validar si existe un prestamo creado
+     * @return si existe o no
+     */
+    boolean existePorId(Long id);
 }

@@ -1,5 +1,8 @@
 package com.ceiba.configuracion;
 
+import com.ceiba.instrumento.puerto.repositorio.RepositorioPrestamo;
+import com.ceiba.instrumento.servicio.ServicioActualizarPrestamo;
+import com.ceiba.instrumento.servicio.ServicioCrearPrestamo;
 import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
 import com.ceiba.usuario.servicio.ServicioActualizarUsuario;
 import com.ceiba.usuario.servicio.ServicioCrearUsuario;
@@ -24,6 +27,15 @@ public class BeanServicio {
     public ServicioActualizarUsuario servicioActualizarUsuario(RepositorioUsuario repositorioUsuario) {
         return new ServicioActualizarUsuario(repositorioUsuario);
     }
-	
+
+    @Bean
+    public ServicioCrearPrestamo servicioCrearPrestamo(RepositorioPrestamo repositorioPrestamo){
+        return new ServicioCrearPrestamo(repositorioPrestamo);
+    }
+
+    @Bean
+    public ServicioActualizarPrestamo servicioActualizarPrestamo(RepositorioPrestamo repositorioPrestamo){
+        return new ServicioActualizarPrestamo(repositorioPrestamo);
+    }
 
 }

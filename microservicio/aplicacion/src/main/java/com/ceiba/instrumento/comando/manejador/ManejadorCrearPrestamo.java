@@ -6,7 +6,9 @@ import com.ceiba.instrumento.comando.fabrica.FabricaInstrumento;
 import com.ceiba.instrumento.modelo.entidad.Prestamo;
 import com.ceiba.instrumento.servicio.ServicioCrearPrestamo;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ManejadorCrearPrestamo implements ManejadorComandoRespuesta<ComandoInstrumento, ComandoRespuesta<Long>> {
 
     private final FabricaInstrumento fabricaInstrumento;
