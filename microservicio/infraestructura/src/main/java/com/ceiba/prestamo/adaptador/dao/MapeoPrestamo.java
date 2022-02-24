@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class MapeoPrestamo implements RowMapper<DtoPrestamo>, MapperResult {
@@ -16,10 +17,11 @@ public class MapeoPrestamo implements RowMapper<DtoPrestamo>, MapperResult {
         String tipo = rs.getString("tipo");
         String nombre = rs.getString("nombre");
         Double valorPrestamo = rs.getDouble("valor_prestamo");
-        LocalDateTime fechaPrestamo = extraerLocalDateTime(rs,"fecha_prestamo");
+        LocalDate fechaPrestamo = extraerLocalDate(rs,"fecha_prestamo");
+        LocalDate fechaUltimoPago = extraerLocalDate(rs,"fecha_ultimo_pago");
         String idUsuario = rs.getString("idUsuario");
 
-        return new DtoPrestamo(id, tipo, nombre, valorPrestamo, fechaPrestamo, idUsuario);
+        return new DtoPrestamo(id, tipo, nombre, valorPrestamo, fechaPrestamo, fechaUltimoPago, idUsuario);
     }
 
 }

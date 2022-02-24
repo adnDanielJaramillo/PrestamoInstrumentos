@@ -11,6 +11,7 @@ create table prestamo (
  nombre varchar(100) not null,
  valor_prestamo double(100) not null,
  fecha_prestamo datetime null,
+ fecha_ultimo_pago datetime null,
  idUsuario varchar(45) not null,
  primary key (id)
 );

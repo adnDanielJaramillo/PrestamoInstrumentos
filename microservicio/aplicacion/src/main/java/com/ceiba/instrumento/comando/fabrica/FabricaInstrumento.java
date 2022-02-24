@@ -5,6 +5,9 @@ import com.ceiba.instrumento.comando.ComandoPrestamo;
 import com.ceiba.instrumento.modelo.entidad.Prestamo;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 @Component
 public class FabricaInstrumento {
 
@@ -14,8 +17,9 @@ public class FabricaInstrumento {
           comandoInstrumento.getTipo(),
           comandoInstrumento.getNombre(),
           comandoInstrumento.getValorPrestamo(),
-          comandoInstrumento.getFechaPrestamo(),
-          comandoInstrumento.getUsuario()
+          LocalDate.parse(comandoInstrumento.getFechaPrestamo(), DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+          LocalDate.parse(comandoInstrumento.getFechaUltimoPago(), DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+          comandoInstrumento.getIdUsuario()
         );
     }
 

@@ -6,6 +6,7 @@ import com.ceiba.instrumento.modelo.entidad.Prestamo;
 import com.ceiba.instrumento.puerto.repositorio.RepositorioPrestamo;
 
 import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class ServicioActualizarPrestamo {
@@ -33,7 +34,7 @@ public class ServicioActualizarPrestamo {
     }
 
     private void validarDiaDePagoPrestamo(Prestamo prestamo){
-        LocalDateTime date = prestamo.getFechaPrestamo();
+        LocalDate date = prestamo.getFechaUltimoPago();
         DayOfWeek day = date.getDayOfWeek();
         if(day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY){
             throw new ExcepcionValorInvalido(EL_PAGO_DEL_PRESTAMO_SOLO_SE_PUEDE_EN_SEMANA);

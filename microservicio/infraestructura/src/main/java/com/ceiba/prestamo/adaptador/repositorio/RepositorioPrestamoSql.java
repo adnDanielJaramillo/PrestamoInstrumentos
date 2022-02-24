@@ -24,6 +24,9 @@ public class RepositorioPrestamoSql implements RepositorioPrestamo {
     @SqlStatement(namespace="prestamo", value="existePorId")
     private static String sqlExistePorId;
 
+    @SqlStatement(namespace="prestamo", value="buscarPorId")
+    private static String sqlBuscarPorId;
+
 
     public RepositorioPrestamoSql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -53,6 +56,14 @@ public class RepositorioPrestamoSql implements RepositorioPrestamo {
         paramSource.addValue("id", id);
 
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorId,paramSource, Boolean.class);
+    }
+
+    @Override
+    public Prestamo obtenerPrestamo(Long id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlBuscarPorId,paramSource, Prestamo.class);
     }
 
 

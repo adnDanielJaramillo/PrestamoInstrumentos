@@ -1,1 +1,1 @@
-insert into prestamo (tipo, nombre, valor_prestamo, fecha_prestamo, idUsuario) values (:tipo, :nombre, :valorPrestamo, :fechaPrestamo, :idUsuario)
+insert into prestamo (tipo, nombre, valor_prestamo, fecha_prestamo, fecha_ultimo_pago, idUsuario) values (:tipo, :nombre, :valorPrestamo, :fechaPrestamo, :fechaUltimoPago, :idUsuario)

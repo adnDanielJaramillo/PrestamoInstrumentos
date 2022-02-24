@@ -7,6 +7,7 @@ import com.ceiba.prestamo.servicio.testdatabuilder.PrestamoTestDataBuilder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,7 +18,7 @@ public class PrestamoTest {
     @DisplayName("Deberia crear correctamente el prestamo")
     void deberiaCrearCorrectamenteElPrestamo(){
         //arrange
-        LocalDateTime fechaPrestamo = LocalDateTime.now();
+        LocalDate fechaPrestamo = LocalDate.now();
         //act
         Prestamo prestamo = new PrestamoTestDataBuilder().conFechaPrestamo(fechaPrestamo).conId(1L).build();
         //assert
@@ -74,6 +75,18 @@ public class PrestamoTest {
                     prestamoTestDataBuilder.build();
                 },
                 ExcepcionValorObligatorio.class, "Se debe ingresar la fecha de prestamo"
+        );
+    }
+
+    @Test
+    void deberiaFallarSinFechaUltimoPago(){
+        //Arrage
+        PrestamoTestDataBuilder prestamoTestDataBuilder = new PrestamoTestDataBuilder().conFechaUltimoPago(null).conId(1L);
+        //act-assert
+        BasePrueba.assertThrows(()->{
+                    prestamoTestDataBuilder.build();
+                },
+                ExcepcionValorObligatorio.class, "Se debe ingresar la fecha de ultimo pago"
         );
     }
 

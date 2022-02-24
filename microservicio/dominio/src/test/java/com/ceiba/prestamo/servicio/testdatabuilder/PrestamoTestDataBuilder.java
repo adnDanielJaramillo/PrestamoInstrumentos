@@ -3,6 +3,7 @@ package com.ceiba.prestamo.servicio.testdatabuilder;
 import com.ceiba.instrumento.modelo.entidad.Prestamo;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class PrestamoTestDataBuilder {
@@ -11,14 +12,16 @@ public class PrestamoTestDataBuilder {
     private String tipo;
     private String nombre;
     private Double valorPrestamo;
-    private LocalDateTime fechaPrestamo;
+    private LocalDate fechaPrestamo;
+    private LocalDate fechaUltimoPago;
     private String idUsuario;
 
     public PrestamoTestDataBuilder() {
         tipo = "viento";
         nombre = "flauta";
         valorPrestamo = 1000.0;
-        fechaPrestamo = LocalDateTime.now();
+        fechaPrestamo = LocalDate.now();
+        fechaUltimoPago = LocalDate.now();
         idUsuario = "1";
     }
 
@@ -40,8 +43,12 @@ public class PrestamoTestDataBuilder {
         this.valorPrestamo = valorPrestamo;
         return this;
     }
-    public PrestamoTestDataBuilder conFechaPrestamo(LocalDateTime fechaPrestamo){
+    public PrestamoTestDataBuilder conFechaPrestamo(LocalDate fechaPrestamo){
         this.fechaPrestamo = fechaPrestamo;
+        return this;
+    }
+    public PrestamoTestDataBuilder conFechaUltimoPago(LocalDate fechaUltimoPago){
+        this.fechaUltimoPago = fechaUltimoPago;
         return this;
     }
     public PrestamoTestDataBuilder conIdUsuario(String idUsuario){
@@ -50,6 +57,6 @@ public class PrestamoTestDataBuilder {
     }
 
     public Prestamo build(){
-        return new Prestamo(id,tipo,nombre,valorPrestamo,fechaPrestamo,idUsuario);
+        return new Prestamo(id,tipo,nombre,valorPrestamo,fechaPrestamo,fechaUltimoPago,idUsuario);
     }
 }

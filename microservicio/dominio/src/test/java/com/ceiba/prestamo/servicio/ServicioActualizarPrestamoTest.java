@@ -31,8 +31,8 @@ public class ServicioActualizarPrestamoTest {
     @DisplayName("Deberia lanzar una excepcion cuando el dia de Pago sea sabado")
     void deberiaLanzarUnaExcepcionCuandoElDiaDePagoSeaSabado(){
         //Arrange
-        LocalDateTime date = LocalDateTime.of(2022,Month.FEBRUARY,26,0,0,0);
-        Prestamo prestamo = new PrestamoTestDataBuilder().conId(20L).conFechaPrestamo(date).build();
+        LocalDate date = LocalDate.of(2022,Month.FEBRUARY,26);
+        Prestamo prestamo = new PrestamoTestDataBuilder().conId(20L).conFechaUltimoPago(date).build();
         RepositorioPrestamo repositorioPrestamo = Mockito.mock(RepositorioPrestamo.class);
         Mockito.when(repositorioPrestamo.existePorId(Mockito.anyLong())).thenReturn(true);
         ServicioActualizarPrestamo servicioActualizarPrestamo = new ServicioActualizarPrestamo(repositorioPrestamo);
@@ -44,8 +44,8 @@ public class ServicioActualizarPrestamoTest {
     @DisplayName("Deberia lanzar una excepcion cuando el dia de pago sea domingo")
     void deberiaLanzarUnaExcepcionCuandoElDiaDePagoSeaDomingo(){
         //Arrange
-        LocalDateTime date = LocalDateTime.of(2022,Month.FEBRUARY,27,0,0,0);
-        Prestamo prestamo = new PrestamoTestDataBuilder().conId(20L).conFechaPrestamo(date).build();
+        LocalDate date = LocalDate.of(2022,Month.FEBRUARY,27);
+        Prestamo prestamo = new PrestamoTestDataBuilder().conId(20L).conFechaUltimoPago(date).build();
         RepositorioPrestamo repositorioPrestamo = Mockito.mock(RepositorioPrestamo.class);
         Mockito.when(repositorioPrestamo.existePorId(Mockito.anyLong())).thenReturn(true);
         ServicioActualizarPrestamo servicioActualizarPrestamo = new ServicioActualizarPrestamo(repositorioPrestamo);

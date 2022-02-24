@@ -29,4 +29,10 @@ public interface RepositorioPrestamo {
      * @return si existe o no
      */
     boolean existePorId(Long id);
+
+    /**
+     * Permite validar si existe un prestamo creado
+     * @return devuelve el prestamo
+     */
+    Prestamo obtenerPrestamo(Long id);
 }
