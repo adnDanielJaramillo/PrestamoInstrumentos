@@ -1,7 +1,6 @@
 package com.ceiba.instrumento.puerto.dao;
 
 import com.ceiba.instrumento.modelo.dto.DtoPrestamo;
-import com.ceiba.instrumento.modelo.entidad.Prestamo;
 
 import java.util.List;
 
