@@ -14,5 +14,5 @@ public class DtoPrestamo {
     private Double valorPrestamo;
     private LocalDate fechaPrestamo;
     private LocalDate fechaUltimoPago;
-    private String usuario;
+    private String idUsuario;
 }

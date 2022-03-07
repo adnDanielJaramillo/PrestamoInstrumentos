@@ -3,6 +3,7 @@ package com.ceiba.prestamo.servicio.testdatabuilder;
 import com.ceiba.instrumento.comando.ComandoPrestamo;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class ComandoPrestamoTestDataBuilder {

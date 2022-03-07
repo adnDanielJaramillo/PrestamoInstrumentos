@@ -16,8 +16,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.core.Is.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(ConsultaControladorPrestamo.class)
@@ -39,6 +38,18 @@ public class ConsultaControladorPrestamoTest {
              .andExpect(jsonPath("$", hasSize(1)))
              .andExpect(jsonPath("$[0].tipo", is("viento")))
              .andExpect(jsonPath("$[0].id", is(1)));
+    }
+
+    @Test
+    @DisplayName("Deberia consultar un prestamos")
+    void deberiaConsultarUnPrestamo()throws Exception{
+        //arrange
+        Long id = 1L;
+        //act - assert
+        mocMvc.perform((get("/prestamos/{id}", id))
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().json("{'id': 1}"));
     }
 
 }
